@@ -34,13 +34,7 @@ firebase_admin.initialize_app(cred)
 db = firestore.client()
 
 config = {
-    "apiKey": "#your_api_key",
-    "authDomain": "threatdetecion.firebaseapp.com",
-    "projectId": "threatdetecion",
-    "databaseURL": "",
-    "storageBucket": "threatdetecion.appspot.com",
-    "messagingSenderId": "",
-    "appId": "",
+    #YOUR_CONFIG_KEYS
 }
 
 firebase = pyrebase.initialize_app(config)
