@@ -34,13 +34,13 @@ firebase_admin.initialize_app(cred)
 db = firestore.client()
 
 config = {
-    "apiKey": "AIzaSyAkANs98sDIhl2PV3RNCTzrFvXWEnhYcCc",
+    "apiKey": "#your_api_key",
     "authDomain": "threatdetecion.firebaseapp.com",
     "projectId": "threatdetecion",
     "databaseURL": "",
     "storageBucket": "threatdetecion.appspot.com",
-    "messagingSenderId": "399294282193",
-    "appId": "1:399294282193:web:2fbc2961f9a844a465c8f0",
+    "messagingSenderId": "",
+    "appId": "",
 }
 
 firebase = pyrebase.initialize_app(config)
@@ -48,8 +48,8 @@ storage = firebase.storage()
 auth = firebase.auth()
 
 # AUTHENTICATED GMAIL ACCOUNT & PASSWORD ONLY
-email = "aakkashsuresh24@gmail.com"
-password = "123456"
+email = ""
+password = ""
 
 user = auth.sign_in_with_email_and_password(email, password)
 
@@ -228,14 +228,7 @@ def detectViolence(video, location, threat_image, threat_face, limit=None):
                 # display faces on the original image
                 draw_faces(my_image, face_image, faces)
 
-                bot = telepot.Bot(
-                    '5722077217:AAFkPqnXjDyWaj4SCNdMfbf978E8A39s0_A')
-                bot.sendMessage(-770213115,
-                                f"VIOLENCE ALERT!! \nLOCATION: {location} \nTIME: {timeMoment}")
-                bot.sendPhoto(-770213115, photo=open(my_image, 'rb'))
-                bot.sendMessage(-770213115, "FACES OBTAINED")
-                bot.sendPhoto(-770213115, photo=open(face_image, 'rb'))
-
+                #CODE FOR TELEGRAM BOT CONNECTIVITY
                 storage.child(my_image).put(my_image)
                 storage.child(face_image).put(face_image)
 
