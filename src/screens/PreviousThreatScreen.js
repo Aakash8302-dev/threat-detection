@@ -33,14 +33,23 @@ const PreviousThreatScreen = () => {
 
   return (
     <Container style={{...classes.root}}>
-        <Typography variant='h5' style={{fontWeight: "bold"}}>Previous Alerts</Typography>
+        <Typography variant='h5' style={{fontWeight: "bold" , color:"#fff"}}>Previous Alerts</Typography>
         {
             data && data ? <Box>
                 {   
                     data.map((e, index) => (
                         <Link to={`/approvedthreat/${e.id}`} style={{textDecoration: "none", color: "#000"}}>
-                        
-                             <ThreatCard key={index} index={index} date={new Date(e.data.date.timestampValue).getTime() / 1000} faces={e.data.faces.stringValue} location={e.data.location.stringValue} image={e.data.image.stringValue}  />
+                              {console.log(data)}
+                             <ThreatCard 
+                                    key={index} 
+                                    index={index} 
+                                    date={new Date(e.data.date.timestampValue).getTime() / 1000} 
+                                    faces={e.data.faces.stringValue} 
+                                    location={e.data.location.stringValue} 
+                                    image={e.data.image.stringValue}
+                                    latitude={e.data.Latitude}
+                                    longitude={e.data.Longitude}
+                              />
                         </Link>
                     ))
                 }

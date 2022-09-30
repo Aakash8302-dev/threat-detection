@@ -23,6 +23,11 @@ const Particle = () => {
         init={particlesInit}
         loaded={particlesLoaded}
         options={{
+            background: {
+                color: {
+                    value: "#121126",
+                },
+            },
           fpsLimit: 120,
           interactivity: {
               events: {
@@ -48,14 +53,14 @@ const Particle = () => {
             },
               particles: {
                   color: {
-                      value: "#000",
+                      value: "#ae5ab8",
                   },
                   links: {
-                      color: "#000",
+                      color: "#ae5ab8",
                       distance: 150,
                       enable: true,
                       opacity: 0.5,
-                      width: 1,
+                      width: 3,
                   },
                   collisions: {
                       enable: true,

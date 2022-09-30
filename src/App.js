@@ -13,20 +13,18 @@ function App() {
 
   const theme = createTheme({
     typography: {
-      fontFamily: ['Poppins', 'sans-serif'].join(','),
+      fontFamily: ['Quicksand', 'sans-serif'].join(','),
     },
   });
 
   return (
     <Router>
       <ThemeProvider theme={theme}>
-      <Header />
       <Routes>
-        <Route path="/" element={<HomeScreen />} exact />
-        <Route path="/threat/:id" element={<ThreatScreen />} />
+        <Route path="/" element={<LoginScreen />} exact/>
+        <Route path="/home" element={<HomeScreen />} />
         <Route path="/approved" element={<PreviousThreatScreen />} />
-        <Route path="approvedthreat/:id" element={<ApprovedThreatScreen />} />
-        <Route path="/login" element={<LoginScreen />} />
+        <Route path="/approvedthreat/:id" element={<ApprovedThreatScreen />} />
       </Routes>
       </ThemeProvider>
     </Router>

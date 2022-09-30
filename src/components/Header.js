@@ -55,7 +55,7 @@ export default function SwipeableTemporaryDrawer() {
       <List>
 
           <ListItem key={"Alerts"} disablePadding>
-            <ListItemButton onClick={() => navigate('/')}>
+            <ListItemButton onClick={() => navigate('/home')}>
               <ListItemIcon>
                 <WarningIcon />
               </ListItemIcon>
@@ -74,7 +74,7 @@ export default function SwipeableTemporaryDrawer() {
 
       </List>
       <Divider />
-      <List>
+      {/* <List>
         {['All mail', 'Trash', 'Spam'].map((text, index) => (
           <ListItem key={text} disablePadding>
             <ListItemButton>
@@ -85,7 +85,7 @@ export default function SwipeableTemporaryDrawer() {
             </ListItemButton>
           </ListItem>
         ))}
-      </List>
+      </List> */}
     </Box>
   );
 
